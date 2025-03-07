@@ -1,0 +1,19 @@
+// Knowledge Graph
+digraph {
+	1 [label=Cars color=blue]
+	2 [label=Wheels color=green]
+	3 [label=Trains color=red]
+	4 [label=Speed color=purple]
+	5 [label=Friction color=orange]
+	6 [label="Rubber Wheels" color=yellow]
+	7 [label="Steel Wheels" color=gray]
+	1 -> 2 [label=has color=black]
+	2 -> 4 [label=affects color=black]
+	3 -> 2 [label=uses color=black]
+	3 -> 4 [label="can achieve" color=black]
+	2 -> 5 [label="determined by" color=black]
+	6 -> 5 [label="has lower friction than steel" color=black]
+	7 -> 5 [label="has higher friction than rubber" color=black]
+	6 -> 4 [label="enables moderate speed" color=black]
+	7 -> 4 [label="enables higher speed under certain conditions" color=black]
+}
