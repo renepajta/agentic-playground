@@ -12,6 +12,7 @@ from autogen_agentchat.conditions import TextMentionTermination, MaxMessageTermi
 from autogen_agentchat.teams import RoundRobinGroupChat
 from autogen_agentchat.ui import Console
 from autogen_ext.models.openai import OpenAIChatCompletionClient
+from autogen_core import CancellationToken
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"

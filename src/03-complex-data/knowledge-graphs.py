@@ -43,8 +43,6 @@ class KnowledgeGraph(BaseModel):
             dot.edge(str(edge.source), str(edge.target), label=edge.label, color=edge.color)
         
         dot.render("knowledge_graph", view=False)
-
-        # dot.view("knowledge_graph", directory='./')
     
 
 def generate_graph(input) -> KnowledgeGraph:

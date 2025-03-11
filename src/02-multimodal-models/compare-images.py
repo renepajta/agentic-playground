@@ -36,35 +36,6 @@ client = OpenAI(
     api_key=token,
 )
 
-print ("Image 1: f1_car_url_1.jpg")
-response = client.chat.completions.create(
-    messages=[
-        {
-            "role": "system",
-            "content": "You are a helpful assistant that describes images in details.",
-        },
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "What's in this image?",
-                },
-                {
-                    "type": "image_url",
-                    "image_url": {
-                        "url": get_image_data_url("f1_car_url_1.jpg", "jpg"),
-                        "detail": "low"
-                    },
-                },
-            ],
-        },
-    ],
-    model=model_name,
-)
-
-print(response.choices[0].message.content)
-
 print ("Comparing two images: f1_car_url_1.jpg and f1_car_url_2.jpg")
 response = client.chat.completions.create(
     messages=[

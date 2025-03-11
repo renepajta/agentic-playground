@@ -118,8 +118,4 @@ class VectorDatabase:
             results.append((car['url'], similarity))
         results.sort(key=lambda x: x[1], reverse=True)
         
-        sortedImages = []
-        for image in results[:top_k]:
-            sortedImages.append(image[0])
-
-        return sortedImages
+        return results

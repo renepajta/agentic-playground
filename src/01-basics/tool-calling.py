@@ -1,44 +1,46 @@
 import os
 import json
 from openai import OpenAI
+import pytz
+from datetime import datetime
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
 model_name = "gpt-4o-mini"
 
 # Define a function that returns flight information between two cities (mock implementation)
-def get_flight_info(origin_city: str, destination_city: str):
-    if origin_city == "Seattle" and destination_city == "Miami":
-        return json.dumps({
-            "airline": "Delta",
-            "flight_number": "DL123",
-            "flight_date": "May 7th, 2024",
-            "flight_time": "10:00AM"})
-    return json.dumps({"error": "No flights found between the cities"})
+def get_current_time(city_name: str) -> str:
+    """Returns the current time in a given city."""
+    try:
+        print("get current time for location: ", city_name)
+        # Get the timezone for the city
+        timezone = pytz.timezone(city_name)
+
+        # Get the current time in the timezone
+        now = datetime.now(timezone)
+        current_time = now.strftime("%I:%M:%S %p")
+
+        return current_time
+    except Exception as e:
+        print("Error: ", e)
+        return "Sorry, I couldn't find the time for that city."
 
 # Define a function tool that the model can ask to invoke in order to retrieve flight information
 tool={
     "type": "function",
     "function": {
-        "name": "get_flight_info",
-        "description": """Returns information about the next flight between two cities.
-            This includes the name of the airline, flight number and the date and time
-            of the next flight""",
+        "name": "get_current_time",
+        "description": """Returns information about the current time in a specific cities. The city format should be like Europe/Berlin for every city that is placed in Germany. Other possible format are Europe/Paris, America/New_York, Asia/Bangkok, America/Seattle""",
         "parameters": {
             "type": "object",
             "properties": {
-                "origin_city": {
+                "city_name": {
                     "type": "string",
-                    "description": "The name of the city where the flight originates",
-                },
-                "destination_city": {
-                    "type": "string", 
-                    "description": "The flight destination city",
-                },
+                    "description": "The name of the city",
+                }
             },
             "required": [
-                "origin_city",
-                "destination_city"
+                "city_name",
             ],
         },
     },
@@ -50,8 +52,8 @@ client = OpenAI(
 )
 
 messages=[
-    {"role": "system", "content": "You are an assistant that helps users find flight information."},
-    {"role": "user", "content": "I'm interested in going to Miami. What is the next flight there from Seattle?"},
+    {"role": "system", "content": "You are an assistant that helps users find information about places. The user is in Cologne"},
+    {"role": "user", "content": "What is currently morning or afternoon?"},
 ]
 
 response = client.chat.completions.create(
