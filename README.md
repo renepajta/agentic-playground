@@ -2,6 +2,26 @@
 
 This project demonstrates agentic concepts, orchestration patterns and functional scenarios using GitHub models and various open souce frameworks like Llama Index, Semantic Kernel, LangChain and AutoGen.
 
+The objective is to try out and learn about the following capabilities of intelligent models:
+- Leveraging Tools for model interaction with external systems
+- Using visual model to ingest and reason about images using a multimodal model
+- Giving up control over the conversation flow using a realtime voice model
+- Handing over structured data types like Knowledge Graphs and Onthologies to models 
+
+That gives you the chance to learn how to combine these capabilities by orchestrating them:
+- Implementing a ReAct pattern with a single agent to plan and execute iterative tasks
+- Forcing the model to use and think in Domain Specific Languages to interact with existing code
+- Combining different agent types to solve complex problems through defined interaction patterns
+- Tasking a reasoning model to solve complex problems on its own without orchestration
+
+Since there are multiple agentic frameworks and hosting runtimes these will let you see how different collaboration patterns can be implemented:
+- Planned agent interactions can be implemented with any agent framework
+- Graph based interactions between agents can be implemented with LangGraph
+- Dynamic agent interaction can be implemented with MagenticOne/AutoGen
+- Event driven agent interaction can be implemented with Llama Index or Semantic Kernel
+- Distributed agent platforms can be built with Llama deploy
+
+
 ## What is an Agent?
 
 > ***agent***: 	perceives its environment, makes decisions, takes actions autonomously in order to achieve goals, and may improve its performance with learning or acquiring knowledge 
@@ -48,8 +68,8 @@ The scope of this workshop covers the following scenarios and technology stacks:
 | [Knowledge Graphs](./src/03-complex-data/README.md) | Knowledge graph generation | OpenAI, Structured output |
 | [Onthologies](./src/03-complex-data/README.md) | Onthologies | OpenAI, OWL |
 | [Custom DSL](./src/04-complex-problems/README.md) | Domain specific languages | OpenAI, Tools |
-| [Single Agent](./src/05-search-agent/README.md) | ReAct Agent | OpenAI,LangChain, Llama Index, Tools |
+| [Single Agent](./src/05-search-agent/README.md) | ReAct Agent | OpenAI, LangChain, Llama Index, Tools |
 | [Human in the loop](./src/06-human-in-the-loop/README.md) | Human in the loop agents | OpenAI, LangChain, LangGraph, Semantic Kernel Tools |
 | [Multi agent collaboration](./src/07-multi-agent-collaboration/README.mdy) | Multi turn agent collaboration| OpenAI, Semantic Kernel, LangGraph |
 | [Society of agents](./src/08-society-of-agents/README.md) | Dynamic planning | OpenAI, AutoGen, MagenticOne |
-| [Event Driven Agents](./src/09-eventdriven-agents/README.md) | Dynamic planning | OpenAI, Semantic Kernel |
+| [Event Driven Agents](./src/09-eventdriven-agents/README.md) | Distributed agents agent platforms| OpenAI, Semantic Kernel, Llama deploy |
