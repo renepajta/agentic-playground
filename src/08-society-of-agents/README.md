@@ -1,7 +1,7 @@
 # Society of agents
 
 This playground is about demonstrating the pattern of dynamic unplanned collaboration between different agent types to solve abstract problems
-![react](/img/react.png)
+![magentic](/img/magentic.png)
 
 ## Simple group collaboration with a moderator
 

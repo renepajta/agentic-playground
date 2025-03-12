@@ -41,7 +41,9 @@
         }
     },
     "forwardPorts": [
-        8000
+        8000,
+        2024,
+        2026
     ],
     "postAttachCommand": "",
     "postCreateCommand": "pip3 install --user -r requirements.txt",
@@ -51,6 +53,12 @@
         "cpus": 4
     },
     "portsAttributes": {
+        "2024": {
+            "label": "Langsmith port"
+        },
+        "2026": {
+            "label": "Langsmith debug"
+        },
         "8000": {
             "label": "FastAPI Server"
         }

@@ -18,3 +18,11 @@ Compare multiple images
 ```
 python compare-images.py
 ```
+
+## Voice agents (requires access to realtime model)
+
+launch the app
+
+```
+python voice-interaction/app.py
+```

@@ -2,7 +2,11 @@
 
 This playground is about decoupling multi-agent collaboration by using event publishing and subscription concepts between agents.
 
-![react](/img/react.png)
+![eventing](/img/eventing.png)
+
+That pattern is especially relevant if you want to run agent inside a distributed system or platform.
+
+![eventing](/img/distributedagents.png)
 
 ## Start up event driven agent runtime
 

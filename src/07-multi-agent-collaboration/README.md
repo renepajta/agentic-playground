@@ -2,9 +2,11 @@
 
 This playground is about demonstrating the difference between multi-agent collaboration and a single reasoning agent to create high quality results through iterative improvement.
 
-![react](/img/react.png)
+![react](/img/multi-agent.png)
 
 ## Execute coding agents
+
+![react](/img/codingagents.png)
 
 Start the coding agents
 
