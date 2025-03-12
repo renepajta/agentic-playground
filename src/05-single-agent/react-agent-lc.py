@@ -7,9 +7,11 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import AgentExecutor, create_react_agent
 from langchain_core.tools import tool
 
-
 import pytz
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"

@@ -10,6 +10,9 @@ from llama_index.core.agent import ReActChatFormatter
 from llama_index.core.llms import MessageRole
 from llama_index.llms.openai_like import OpenAILike
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_current_username(input: str) -> str:
     "Get the username of the current user."

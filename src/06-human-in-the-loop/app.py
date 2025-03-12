@@ -13,6 +13,9 @@ from langgraph.prebuilt import ToolNode
 from langchain_core.tools import tool
 from langgraph.types import Command, interrupt
 import uuid
+from dotenv import load_dotenv
+
+load_dotenv()
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"

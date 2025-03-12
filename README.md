@@ -29,7 +29,9 @@ If you're using bash:
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```
 
-2. Install dependencies
+or rename the file `.env_template` to `.env` and put the value inside the `.env` file. Each python script will load the value from that value automatically.
+
+2. Install dependencies (should be already done when using a GitHub codespace)
 
 ```
 python -m pip -r requirements.txt

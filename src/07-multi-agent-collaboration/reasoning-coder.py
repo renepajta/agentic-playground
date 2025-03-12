@@ -12,6 +12,9 @@ from autogen_agentchat.teams._group_chat._magentic_one._magentic_one_orchestrato
 from autogen_agentchat.conditions import TextMentionTermination, MaxMessageTermination
 from autogen_agentchat.ui import Console
 from autogen_ext.models.openai import OpenAIChatCompletionClient
+from dotenv import load_dotenv
+
+load_dotenv()
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"

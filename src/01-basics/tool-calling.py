@@ -3,6 +3,9 @@ import json
 from openai import OpenAI
 import pytz
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"

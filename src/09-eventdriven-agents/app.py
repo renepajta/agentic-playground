@@ -20,7 +20,10 @@ from semantic_kernel.processes.local_runtime.local_event import KernelProcessEve
 from semantic_kernel.processes.local_runtime.local_kernel_process import start
 from semantic_kernel.processes.process_builder import ProcessBuilder
 
-dotenv.load_dotenv()
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 class CommonEvents(Enum):
     UserInputReceived = "UserInputReceived"

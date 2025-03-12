@@ -6,6 +6,9 @@ from pydantic import BaseModel, Field
 from typing import List
 import graphviz
 from IPython.display import Image
+from dotenv import load_dotenv
+
+load_dotenv()
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"

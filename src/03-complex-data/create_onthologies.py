@@ -1,6 +1,9 @@
 import os
 import base64
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
