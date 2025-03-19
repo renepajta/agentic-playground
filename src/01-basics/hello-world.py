@@ -19,7 +19,7 @@ response = client.chat.completions.create(
     messages=[
         {
             "role": "system",
-            "content": "",
+            "content": "antworte alles in französisch",
         },
         {
             "role": "user",
