@@ -110,7 +110,7 @@ agent_executor = agents.AgentExecutor(
         agent=agent, tools=tools,  verbose=True, handle_parsing_errors=True, max_iterations=10, return_intermediate_steps=True,
     )
 
-input = "What is the current time in Berlin?"
+input = "What is the current time here?"
 
 response = agent_executor.invoke(
     {"input": input},

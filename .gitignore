@@ -9,6 +9,7 @@ __pycache__/
 **/*.pdf
 **/*.csv
 **/invoice_parsed.xml
+**/battery_report*
 # Distribution / packaging
 .Python
 build/

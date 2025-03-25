@@ -1,6 +1,6 @@
 import os
 from langchain_openai import ChatOpenAI
-
+from langchain_openai import AzureChatOpenAI
 from dotenv import load_dotenv
 from browser_use import Agent
 import asyncio
@@ -20,6 +20,17 @@ model4o = ChatOpenAI(
     api_key=token,
     base_url=endpoint
 )
+
+# model4o = AzureChatOpenAI(
+#     azure_deployment="gpt-4o",  # or your deployment
+#     api_version="2024-08-06",  # or your api version
+#     azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"), 
+#     api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
+#     temperature=0,
+#     max_tokens=None,
+#     timeout=None,
+#     # other params...
+# )
 
 async def main():
     agent = Agent(

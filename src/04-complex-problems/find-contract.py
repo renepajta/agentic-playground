@@ -51,36 +51,35 @@ if not CV.exists():
 	raise FileNotFoundError(f'You need to set the path to your cv file in the CV variable. CV file not found at {CV}')
 
 
-class Job(BaseModel):
+class Contract(BaseModel):
 	title: str
 	link: str
 	company: str
 	fit_score: float
-	location: Optional[str] = None
-	salary: Optional[str] = None
+	price_per_month: Optional[str] = None
+	price_per_killowat_hour: Optional[str] = None
 
 
-@controller.action('Save jobs to file - with a score how well it fits to my profile', param_model=Job)
-def save_jobs(job: Job):
-	with open('jobs.csv', 'a', newline='') as f:
+@controller.action('Save results to file - with a score how well it fits to my profile', param_model=Contract)
+def save_results(found_contract: Contract):
+	with open('contracts.csv', 'a', newline='') as f:
 		writer = csv.writer(f)
-		writer.writerow([job.title, job.company, job.link, job.salary, job.location])
+		writer.writerow([found_contract.title, found_contract.company, found_contract.link, found_contract.fit_score, found_contract.price_per_month, found_contract.price_per_killowat_hour])
+		logger.info(f'Saved contract {found_contract.title} to file')
 
-	return 'Saved job to file'
+	return 'Saved contracts to file'
 
 
-@controller.action('Read jobs from file')
-def read_jobs():
-	with open('jobs.csv', 'r') as f:
+@controller.action('Read contracts from file')
+def read_contracts():
+	with open('contracts.csv', 'r') as f:
 		return f.read()
 
 
-@controller.action('Read my cv for context to fill forms')
-def read_cv():
-	pdf = PdfReader(CV)
-	text = ''
-	for page in pdf.pages:
-		text += page.extract_text() or ''
+@controller.action('Read my usage data from local file')
+def read_file():
+	text = 'I live in 44135 Dortmund. The 44135 is my local PLZ or ZIP code. We are three people living in the household and we consmume 3000 kWh per year.'
+	
 	logger.info(f'Read cv with {len(text)} characters')
 	return ActionResult(extracted_content=text, include_in_memory=True)
 
@@ -127,24 +126,17 @@ browser = Browser(
 
 async def main():
 	ground_task = (
-		'You are a professional job finder. '
-		'1. Read my cv with read_cv'
-		'2. find 1 interesting job offers per company for me and put them in a file called jobs.csv'
-		'3. Evaluate how well the job fits to my profile and add a score to each position with a short explanation and save it to the file'
-		'search at company:'
+		'You are a professional price comparision agent. '
+		'1. Read my usage data, location read_file'
+		'2. find 3 relevant electricity contracts for me starting next month and put them in a file called contracts.csv'
+		'3. Evaluate how well the contract fits to my profile and add a score to each position with a short explanation and save it to the file'
+		'search at main website for the following company. Always use the german website to look for a suitable Stromtarif:'
 	)
+
 	tasks = [
 		ground_task + '\n' + 'E.ON',
-		# ground_task + '\n' + 'Microsoft'
+		# ground_task + '\n' + 'Vatten'
 	]
-
-	# ground_task = (
-	# 	'You are a professional price comparision agent. '
-	# 	'1. Read my usage data, location read_cv'
-	# 	'2. find 3 relevant energy contracts for me starting next month and put them in a file called contracts.csv'
-	# 	'3. Evaluate how well the contract fits to my profile and add a score to each position with a short explanation and save it to the file'
-	# 	'search at company:'
-	# )
 
 	agents = []
 	for task in tasks:
