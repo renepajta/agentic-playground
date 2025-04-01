@@ -82,7 +82,7 @@ response = client.chat.completions.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Extract all invoice data from this image. Output only the xml an nothing else.:",
+                    "text": "Extract all invoice data from this image. Also answer the following:",
                 },
                 {
                     "type": "image_url",

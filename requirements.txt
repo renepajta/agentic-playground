@@ -13,6 +13,11 @@ langgraph-cli[inmem]==0.1.75
 debugpy==1.8.13
 autogen-agentchat==0.4.8.2
 autogen-ext[openai]==0.4.8.2
-semantic-kernel==1.23.1
+semantic-kernel==1.26.1
 pyperclip==1.9.0
 python-dotenv==1.0.1
+semantic-kernel[realtime]==1.26.1
+pyaudio==0.2.14
+sounddevice==0.5.1
+pydub==0.25.1
+browser-use
