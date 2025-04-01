@@ -20,3 +20,12 @@ Use a model to plan and validate a shipment
 ```
 python execute-plan.py
 ```
+
+
+## Use process framework from Semantic Kernel
+
+Use the Semantic Kernel process framework to prcess steps in order
+
+```
+python process-step.py
+```

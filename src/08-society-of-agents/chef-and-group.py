@@ -28,6 +28,7 @@ model_client = OpenAIChatCompletionClient(
 
 # Define a tool
 async def get_weather(city: str) -> str:
+    """Gets a statement about the current weathr in the city defined in the parameter"""
     print("executing get_weather")
     return f"The weather in {city} is 73 degrees and Sunny."
 

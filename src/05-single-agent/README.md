@@ -10,3 +10,11 @@ Use a single agent to execute multiple tools to complete a task
 ```
 python react-agent-lc.py
 ```
+
+## Execute an agent using a reasoning model
+
+Use o3- mini model to execute multiple tools to complete a task
+
+```
+python reasoning-agent-sk.py
+```
