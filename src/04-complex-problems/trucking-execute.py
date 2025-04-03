@@ -242,7 +242,7 @@ available_functions = {
             "calculate_travel_time": calculate_travel_time,
         } 
 
-userInput = "I am in Berlin. I have a red box and 3 blue boxes. I need to ship them across 100 kilometers.  What time is it now? The trucks should be loaded now and should be shipping after it has been loaded. Please tell me when will the truck arrive?"
+userInput = "I am in Berlin. I have a 20 red boxs and 33 blue boxes. I need to ship them across 100 kilometers.  What time is it now? The trucks should be loaded now and should be shipping after it has been loaded. Please tell me when will the truck arrive?"
 
 messages = [{"role": "system", "content": commandprompt}, {"role": "user", "content": userInput}]
 

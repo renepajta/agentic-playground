@@ -1,5 +1,9 @@
 # Society of agents
 
+The logical stack for combining multiple agents in a platform requries the following logical stack
+
+![magentic](/img/logicalstack.png)
+
 This playground is about demonstrating the pattern of dynamic unplanned collaboration between different agent types to solve abstract problems
 ![magentic](/img/magentic.png)
 

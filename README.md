@@ -21,7 +21,6 @@ Since there are multiple agentic frameworks and hosting runtimes these will let 
 - Event driven agent interaction can be implemented with Llama Index or Semantic Kernel
 - Distributed agent platforms can be built with Llama deploy
 
-
 ## What is an Agent?
 
 > ***agent***: 	perceives its environment, makes decisions, takes actions autonomously in order to achieve goals, and may improve its performance with learning or acquiring knowledge 
