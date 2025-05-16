@@ -72,3 +72,5 @@ The scope of this workshop covers the following scenarios and technology stacks:
 | [Multi agent collaboration](./src/07-multi-agent-collaboration/README.mdy) | Multi turn agent collaboration| OpenAI, Semantic Kernel, LangGraph |
 | [Society of agents](./src/08-society-of-agents/README.md) | Dynamic planning | OpenAI, AutoGen, MagenticOne |
 | [Event Driven Agents](./src/09-eventdriven-agents/README.md) | Distributed agents agent platforms| OpenAI, Semantic Kernel, Llama deploy |
+| [Model Context Protocol](./src/10-mcp/README.md) | MCP Servers and clients
+| OpenAI, MCP, LangGraph |

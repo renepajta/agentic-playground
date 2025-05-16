@@ -10,6 +10,7 @@ __pycache__/
 **/*.csv
 **/invoice_parsed.xml
 **/battery_report*
+scratch.txt
 # Distribution / packaging
 .Python
 build/
