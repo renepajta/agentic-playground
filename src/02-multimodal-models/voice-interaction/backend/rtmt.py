@@ -137,7 +137,9 @@ class RTMiddleTier:
                         })
                     if "response" in message:
                         replace = False
-                        for i, output in enumerate(reversed(message["response"]["output"])):
+                        # Iterate backwards through the list to safely remove items
+                        for i in range(len(message["response"]["output"]) - 1, -1, -1):
+                            output = message["response"]["output"][i]
                             if output["type"] == "function_call":
                                 message["response"]["output"].pop(i)
                                 replace = True
